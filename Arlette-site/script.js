@@ -1,12 +1,25 @@
 async function loadSite() {
-  const res = await fetch("data/site.json");
+  // Use a leading slash so it always looks at the root data folder
+  const res = await fetch("/data/site.json");
   const data = await res.json();
 
-  document.getElementById("site-title")?.innerText = data.title;
-  document.getElementById("tagline")?.innerText = data.tagline;
-  document.getElementById("about")?.innerText = data.about;
-  document.getElementById("email")?.innerText = data.email;
+  // Helper function to safely set text if the ID exists on the page
+  const setText = (id, text) => {
+    const el = document.getElementById(id);
+    if (el) el.innerText = text;
+  };
+
+  setText("site-title", data.title);
+  setText("tagline", data.tagline);
+  setText("about", data.about);
+  setText("email", data.email); // This is the one for your contact page!
 }
+
+// CRITICAL: This ensures the script waits for the HTML to load
+window.addEventListener('DOMContentLoaded', () => {
+  loadSite();
+  // If you have other functions like loadProjects, call them here too
+});
 
 function createProjectCard(p) {
   const div = document.createElement("div");
