@@ -1,9 +1,7 @@
 async function loadSite() {
-  // Use a leading slash so it always looks at the root data folder
   const res = await fetch("/data/site.json");
   const data = await res.json();
 
-  // Helper function to safely set text if the ID exists on the page
   const setText = (id, text) => {
     const el = document.getElementById(id);
     if (el) el.innerText = text;
@@ -12,14 +10,17 @@ async function loadSite() {
   setText("site-title", data.title);
   setText("tagline", data.tagline);
   setText("about", data.about);
-  setText("email", data.email); // This is the one for your contact page!
-}
+  setText("email", data.email);
 
-// CRITICAL: This ensures the script waits for the HTML to load
-window.addEventListener('DOMContentLoaded', () => {
-  loadSite();
-  // If you have other functions like loadProjects, call them here too
-});
+  // --- ADD THIS SECTION FOR THE HERO IMAGE ---
+  if (data.hero_image) {
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      // This applies the image while keeping your dark overlay
+      heroSection.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('${data.hero_image}')`;
+    }
+  }
+}
 
 function createProjectCard(p) {
   const div = document.createElement("div");
