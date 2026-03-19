@@ -16,6 +16,7 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
           - { label: "About", name: "about", widget: "text" }
           - { label: "Email", name: "email", widget: "string" }
           
