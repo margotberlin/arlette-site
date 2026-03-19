@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  color: #111;
+  background: #f8f7f5;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Georgia", serif;
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 40px;
+  position: absolute;
+  width: 100%;
+}
+
+.nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+.hero {
+  height: 90vh;
+  background: url('https://picsum.photos/1600/900?grayscale') center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.hero-inner {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.section {
+  padding: 100px 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.grid div {
+  background: white;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.grid div:hover {
+  transform: translateY(-5px);
+}
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
