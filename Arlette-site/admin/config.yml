@@ -1,16 +1,14 @@
 backend:
-  name: git-gateway # Changed from github to use Netlify Identity
+  name: git-gateway
   branch: main
 
-# Updated these to point inside your subfolder
 media_folder: "Arlette-site/images"
 public_folder: "/images"
 
 collections:
   - name: "projects"
     label: "Projects"
-    # Added Arlette-site/ prefix
-    file: "Arlette-site/data/projects.json"
+    file: "Arlette-site/data/projects.json" # Indented 4 spaces total
     format: "json"
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -23,8 +21,7 @@ collections:
 
   - name: "site"
     label: "Site Settings"
-    # Added Arlette-site/ prefix
-    file: "Arlette-site/data/site.json"
+    file: "Arlette-site/data/site.json" # Indented 4 spaces total
     format: "json"
     fields:
       - { label: "Title", name: "title", widget: "string" }
