@@ -1,15 +1,7 @@
-/* This applies the font to the whole site */
-body {
-  font-family: 'Inter', sans-serif;
-}
+/* 1. IMPORT FONTS FROM GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
-/* This makes your titles stand out */
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: #333;
-}
-
+/* 2. RESET & GLOBAL STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -17,23 +9,29 @@ h1, h2, h3 {
 }
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  /* This is the new Inter font */
+  font-family: 'Inter', sans-serif; 
   color: #111;
   background: #f8f7f5;
   line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-family: "Georgia", serif;
-  font-weight: 400;
+/* 3. TYPOGRAPHY */
+h1, h2, h3, .section-title {
+  /* This is the new Playfair Display font */
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #333;
 }
 
+/* 4. NAVIGATION */
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 24px 40px;
   position: absolute;
   width: 100%;
+  z-index: 10; /* Ensures nav stays on top of the hero image */
 }
 
 .nav a {
@@ -41,30 +39,33 @@ h1, h2, h3 {
   text-decoration: none;
   color: #111;
   font-size: 14px;
+  font-weight: 600;
 }
 
+/* 5. HERO SECTION */
 .hero {
   height: 90vh;
-  background: url('https://picsum.photos/1600/900?grayscale') center/cover;
+  /* Added a dark overlay so text is readable over the image */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+              url('https://picsum.photos/1600/900?grayscale') center/cover;
   display: flex;
   align-items: center;
   padding: 0 60px;
-}
-
-.hero-inner {
-  max-width: 600px;
+  color: white; /* Changed text to white for the dark background */
 }
 
 .hero h1 {
   font-size: 64px;
   margin-bottom: 20px;
+  color: white; /* Ensure title is white in hero */
 }
 
 .hero p {
   font-size: 20px;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
+/* 6. LAYOUT & GRID */
 .section {
   padding: 100px 40px;
 }
@@ -87,7 +88,9 @@ h1, h2, h3 {
 
 .grid div {
   background: white;
-  padding: 20px;
+  padding: 30px;
+  border-radius: 8px; /* Added slight rounding */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Added subtle shadow */
   transition: transform 0.3s ease;
 }
 
@@ -95,14 +98,19 @@ h1, h2, h3 {
   transform: translateY(-5px);
 }
 
+/* 7. FOOTER */
 .footer {
   text-align: center;
-  padding: 40px;
+  padding: 60px 40px;
   font-size: 14px;
   opacity: 0.6;
 }
 
+/* 8. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
+  .hero {
+    padding: 0 20px;
+  }
   .hero h1 {
     font-size: 40px;
   }
