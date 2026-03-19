@@ -6,25 +6,32 @@ media_folder: "Arlette-site/images"
 public_folder: "/images"
 
 collections:
-  - name: "projects"
-    label: "Projects"
-    file: "Arlette-site/data/projects.json" # Indented 4 spaces total
-    format: "json"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        field: { label: Image, name: image, widget: image }
-
-  - name: "site"
-    label: "Site Settings"
-    file: "Arlette-site/data/site.json" # Indented 4 spaces total
-    format: "json"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Tagline", name: "tagline", widget: "string" }
-      - { label: "About", name: "about", widget: "text" }
-      - { label: "Email", name: "email", widget: "string" }
+  - name: "content"
+    label: "Content"
+    files:
+      - name: "site_settings"
+        label: "Site Settings"
+        file: "Arlette-site/data/site.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "About", name: "about", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          
+      - name: "projects_list"
+        label: "Projects"
+        file: "Arlette-site/data/projects.json"
+        format: "json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                field: { label: Image, name: image, widget: image }
