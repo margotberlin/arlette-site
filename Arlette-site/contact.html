@@ -1,14 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Arlette Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container section">
-    <h1>Contact</h1>
-    <p>Email: <span id="email"></span></p>
-  </div>
+<body class="min-h-screen bg-stone-100 text-stone-900 antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
+    <div class="mx-auto max-w-6xl rounded-2xl border border-white/40 bg-white/40 backdrop-blur-xl shadow-lg shadow-black/5">
+      <div class="flex items-center justify-between px-4 py-3 md:px-6">
+        <a href="index.html" class="text-xl font-semibold tracking-wide text-stone-900">Arlette</a>
+
+        <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+          <a href="index.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">Home</a>
+          <a href="projects.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">Projects</a>
+          <a href="about.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">About</a>
+          <a href="contact.html" class="text-sm font-medium text-stone-950">Contact</a>
+        </nav>
+
+        <button
+          type="button"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-300/70 text-stone-700 md:hidden"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Toggle navigation"
+          data-nav-toggle
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-nav" class="hidden border-t border-white/50 px-4 py-4 md:hidden" aria-label="Mobile">
+        <ul class="space-y-3" data-nav-menu>
+          <li><a href="index.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">Home</a></li>
+          <li><a href="projects.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">Projects</a></li>
+          <li><a href="about.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">About</a></li>
+          <li><a href="contact.html" class="block text-sm font-medium text-stone-950">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-6 pt-36 pb-20 md:px-10">
+    <section class="mx-auto max-w-3xl rounded-3xl border border-stone-200 bg-white/80 p-8 shadow-sm md:p-12">
+      <h1 class="text-4xl font-semibold text-stone-900 md:text-5xl">Contact</h1>
+      <p class="mt-6 text-lg text-stone-700">Email: <span id="email" class="font-medium text-stone-900"></span></p>
+    </section>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
