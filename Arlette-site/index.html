@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arlette Studio</title>
+  <title>Studio Arlette</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #f6f1e8;
+      color: #231f1a;
+    }
+
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-stone-100 text-stone-900 antialiased">
+<body class="min-h-screen bg-[#f6f1e8] text-stone-900 antialiased">
   <header class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-8">
-    <div class="mx-auto max-w-6xl rounded-2xl border border-white/40 bg-white/40 backdrop-blur-xl shadow-lg shadow-black/5">
-      <div class="flex items-center justify-between px-4 py-3 md:px-6">
-        <a href="index.html" class="text-xl font-semibold tracking-wide text-stone-900">Arlette</a>
+    <div class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-white/60 bg-[#f8f3eb]/90 shadow-[0_12px_40px_rgba(58,43,29,0.12)] backdrop-blur-xl">
+      <div class="flex items-center justify-between px-5 py-3 md:px-7">
+        <a href="index.html" class="font-display text-2xl leading-none tracking-[0.08em] text-stone-900">Studio Arlette</a>
 
         <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
-          <a href="index.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">Home</a>
+          <a href="index.html" class="text-sm font-medium text-stone-950">Home</a>
           <a href="projects.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">Projects</a>
           <a href="about.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">About</a>
           <a href="contact.html" class="text-sm font-medium text-stone-700 transition hover:text-stone-950">Contact</a>
@@ -22,21 +36,21 @@
 
         <button
           type="button"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-300/70 text-stone-700 md:hidden"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-stone-300/70 text-stone-700 md:hidden"
           aria-expanded="false"
           aria-controls="mobile-nav"
           aria-label="Toggle navigation"
           data-nav-toggle
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16" />
           </svg>
         </button>
       </div>
 
-      <nav id="mobile-nav" class="hidden border-t border-white/50 px-4 py-4 md:hidden" aria-label="Mobile">
-        <ul class="space-y-3" data-nav-menu>
-          <li><a href="index.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">Home</a></li>
+      <nav id="mobile-nav" class="hidden border-t border-stone-200/80 bg-[#f8f3eb]/95 px-5 py-5 md:hidden" aria-label="Mobile">
+        <ul class="space-y-4" data-nav-menu>
+          <li><a href="index.html" class="block text-sm font-medium text-stone-950">Home</a></li>
           <li><a href="projects.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">Projects</a></li>
           <li><a href="about.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">About</a></li>
           <li><a href="contact.html" class="block text-sm font-medium text-stone-700 transition hover:text-stone-950">Contact</a></li>
@@ -47,35 +61,43 @@
 
   <main>
     <section
-      class="hero flex min-h-[85vh] items-center bg-cover bg-center bg-no-repeat px-6 pt-32 pb-20 md:px-10"
-      style="background-image: linear-gradient(rgba(28, 25, 23, 0.45), rgba(28, 25, 23, 0.45)), url('https://picsum.photos/1600/900?grayscale');"
+      class="hero flex min-h-[92vh] items-end bg-cover bg-center bg-no-repeat px-6 pb-16 pt-32 md:px-10 md:pb-24"
+      style="background-image: linear-gradient(rgba(40, 32, 23, 0.28), rgba(40, 32, 23, 0.28)), url('https://picsum.photos/1600/900?grayscale');"
     >
       <div class="mx-auto w-full max-w-6xl">
-        <div class="max-w-3xl">
-          <h1 id="site-title" class="text-4xl font-semibold leading-tight text-white md:text-6xl"></h1>
-          <p id="tagline" class="mt-4 text-lg text-stone-100 md:text-xl"></p>
+        <div class="max-w-3xl rounded-[2rem] bg-black/10 p-6 backdrop-blur-[2px] md:p-10">
+          <p class="text-sm uppercase tracking-[0.4em] text-stone-100">Interior Design Studio</p>
+          <h1 id="site-title" class="font-display mt-5 text-5xl leading-none text-white md:text-7xl"></h1>
+          <p id="tagline" class="mt-6 max-w-2xl text-lg leading-8 text-stone-100 md:text-xl"></p>
         </div>
       </div>
     </section>
 
     <section class="px-6 py-16 md:px-10 md:py-24">
       <div class="mx-auto max-w-6xl">
-        <h2 class="text-3xl font-semibold text-stone-900 md:text-4xl">Selected Work</h2>
-        <div id="featured-projects" class="mt-10 grid gap-8 md:grid-cols-2"></div>
+        <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p id="home-section-label" class="text-sm uppercase tracking-[0.38em] text-stone-500">Portfolio</p>
+            <h2 id="home-section-title" class="font-display mt-4 text-5xl leading-none text-stone-900 md:text-6xl">Selected Work</h2>
+          </div>
+          <p id="home-section-intro" class="max-w-xl text-base leading-8 text-stone-600 md:text-lg">A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance.</p>
+        </div>
+        <div id="featured-projects" class="mt-14 space-y-16 md:space-y-20"></div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-stone-900 py-12 text-white">
+  <footer class="bg-[#201915] py-14 text-white">
     <div class="mx-auto max-w-6xl px-6 md:px-10">
-      <div class="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
+      <div class="grid gap-10 md:grid-cols-[1.1fr_0.8fr_1fr]">
         <div>
-          <h3 class="mb-4 text-lg font-semibold">Arlette Studio</h3>
-          <p class="text-stone-400">Contemporary design and creative direction</p>
+          <p class="text-xs uppercase tracking-[0.38em] text-stone-400">Studio</p>
+          <h3 id="footer-title" class="font-display mt-4 text-4xl text-stone-100">Studio Arlette</h3>
+          <p class="mt-4 max-w-sm text-sm leading-7 text-stone-300">Contemporary interiors shaped through texture, restraint, and atmospheric detail.</p>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-semibold">Links</h4>
-          <ul class="space-y-2 text-stone-400">
+          <h4 class="text-sm uppercase tracking-[0.3em] text-stone-400">Navigate</h4>
+          <ul class="mt-5 space-y-3 text-stone-300">
             <li><a href="index.html" class="transition hover:text-white">Home</a></li>
             <li><a href="projects.html" class="transition hover:text-white">Projects</a></li>
             <li><a href="about.html" class="transition hover:text-white">About</a></li>
@@ -83,19 +105,29 @@
           </ul>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-semibold">Follow</h4>
-          <div class="flex gap-4">
-            <a href="https://instagram.com" class="text-stone-400 transition hover:text-white" aria-label="Instagram">
-              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+          <h4 class="text-sm uppercase tracking-[0.3em] text-stone-400">Follow</h4>
+          <div class="mt-5 flex flex-wrap gap-4">
+            <a href="#" data-social-link="instagram" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition hover:border-stone-400 hover:text-white" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.25"></rect>
+                <circle cx="12" cy="12" r="4.1"></circle>
+                <circle cx="17.2" cy="6.8" r="1"></circle>
+              </svg>
             </a>
-            <a href="https://linkedin.com" class="text-stone-400 transition hover:text-white" aria-label="LinkedIn">
-              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+            <a href="#" data-social-link="linkedin" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition hover:border-stone-400 hover:text-white" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.56c0-1.06-.79-1.94-1.91-1.94-1.12 0-1.91.88-1.91 1.94 0 1.03.77 1.9 1.88 1.9h.02c1.15 0 1.92-.87 1.92-1.9ZM20.44 13.12c0-3.54-1.89-5.18-4.41-5.18-2.03 0-2.94 1.12-3.45 1.91V8.5H9.2c.04.89 0 11.5 0 11.5h3.38v-6.42c0-.34.02-.68.13-.92.27-.68.87-1.38 1.89-1.38 1.33 0 1.87 1.02 1.87 2.51V20h3.38v-6.88Z"/></svg>
+            </a>
+            <a href="#" data-social-link="facebook" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition hover:border-stone-400 hover:text-white" aria-label="Facebook" target="_blank" rel="noreferrer">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.37 21v-8h2.69l.4-3.12h-3.09V7.89c0-.9.25-1.52 1.54-1.52h1.64V3.58c-.79-.09-1.59-.14-2.39-.13-2.36 0-3.98 1.44-3.98 4.08v2.35H7.5V13h2.68v8h3.19Z"/></svg>
+            </a>
+            <a href="#" data-social-link="pinterest" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-stone-700 text-stone-300 transition hover:border-stone-400 hover:text-white" aria-label="Pinterest" target="_blank" rel="noreferrer">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.93 2 4 5.66 4 9.65c0 2.41.91 4.55 2.86 5.35.32.13.61.01.7-.35.06-.25.22-.88.29-1.14.09-.35.05-.47-.19-.75-.51-.61-.84-1.39-.84-2.5 0-3.23 2.42-6.12 6.3-6.12 3.43 0 5.31 2.1 5.31 4.91 0 3.69-1.63 6.81-4.05 6.81-1.34 0-2.35-1.11-2.03-2.48.39-1.63 1.15-3.39 1.15-4.57 0-1.05-.57-1.93-1.74-1.93-1.38 0-2.49 1.43-2.49 3.35 0 1.22.41 2.04.41 2.04l-1.66 7.03c-.49 2.08-.07 4.63-.04 4.88.02.14.2.17.28.07.12-.15 1.67-2.08 2.19-3.99.15-.54.85-3.34.85-3.34.42.8 1.64 1.5 2.94 1.5 3.87 0 6.49-3.53 6.49-8.26C20 5.33 16.63 2 12.04 2Z"/></svg>
             </a>
           </div>
         </div>
       </div>
-      <div class="border-t border-stone-800 pt-8">
-        <p class="text-center text-stone-400">© Arlette Studio. All rights reserved.</p>
+      <div class="mt-10 border-t border-stone-800 pt-7">
+        <p class="text-center text-sm text-stone-400">© Studio Arlette. All rights reserved.</p>
       </div>
     </div>
   </footer>

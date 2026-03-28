@@ -1,6 +1,35 @@
 {
-  "title": "Arlette Studio",
-  "tagline": "Interior design",
-  "about": "We design thoughtful interiors.",
-  "email": "studioarlette.co@gmail.com"
+  "title": "Studio Arlette",
+  "tagline": "Interior design shaped with warmth, texture, and calm restraint.",
+  "about_page": {
+    "section_label": "About",
+    "section_title": "Studio Profile",
+    "body": "We design thoughtful interiors."
+  },
+  "home_page": {
+    "section_label": "Portfolio",
+    "section_title": "Selected Work",
+    "section_intro": "A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance.",
+    "featured_item_label": "Selected Work"
+  },
+  "projects_page": {
+    "section_label": "Portfolio",
+    "section_title": "Projects",
+    "section_intro": "A portfolio of interiors and renovations shown as an image-led reel, with each project opening into a fuller story."
+  },
+  "contact_page": {
+    "section_label": "Contact",
+    "section_title": "Let's Talk",
+    "section_intro": "For collaborations, consultations, or press enquiries, reach out directly by email or through the studio's social channels.",
+    "email_label": "Email",
+    "instagram_label": "Instagram",
+    "linkedin_label": "LinkedIn",
+    "facebook_label": "Facebook",
+    "pinterest_label": "Pinterest"
+  },
+  "email": "studioarlette.co@gmail.com",
+  "instagram": "https://instagram.com/yourstudio",
+  "linkedin": "https://linkedin.com/in/yourstudio",
+  "facebook": "https://facebook.com/yourstudio",
+  "pinterest": "https://pinterest.com/yourstudio"
 }

@@ -16,10 +16,47 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Hero Image", name: "hero_image", widget: "image" }
-          - { label: "About", name: "about", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - label: "About Page"
+            name: "about_page"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Title", name: "section_title", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - label: "Homepage"
+            name: "home_page"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Title", name: "section_title", widget: "string" }
+              - { label: "Section Intro", name: "section_intro", widget: "text" }
+              - { label: "Featured Item Label", name: "featured_item_label", widget: "string" }
+          - label: "Projects Page"
+            name: "projects_page"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Title", name: "section_title", widget: "string" }
+              - { label: "Section Intro", name: "section_intro", widget: "text" }
+          - label: "Contact Page"
+            name: "contact_page"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Title", name: "section_title", widget: "string" }
+              - { label: "Section Intro", name: "section_intro", widget: "text" }
+              - { label: "Email Label", name: "email_label", widget: "string" }
+              - { label: "Instagram Label", name: "instagram_label", widget: "string" }
+              - { label: "LinkedIn Label", name: "linkedin_label", widget: "string" }
+              - { label: "Facebook Label", name: "facebook_label", widget: "string" }
+              - { label: "Pinterest Label", name: "pinterest_label", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
-          
+          - { label: "Instagram URL", name: "instagram", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+          - { label: "Facebook URL", name: "facebook", widget: "string" }
+          - { label: "Pinterest URL", name: "pinterest", widget: "string" }
+
       - name: "projects_list"
         label: "Projects"
         file: "Arlette-site/data/projects.json"
@@ -28,11 +65,14 @@ collections:
           - label: "Projects"
             name: "projects"
             widget: "list"
+            summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Slug", name: "slug", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
+              - { label: "Featured on Homepage", name: "featured", widget: "boolean", required: false, default: false }
+              - { label: "Featured Order", name: "featured_order", widget: "number", required: false, value_type: "int", min: 1 }
               - label: "Images"
                 name: "images"
                 widget: "list"
-                field: { label: Image, name: image, widget: image }
+                field: { label: "Image", name: "image", widget: "image" }
