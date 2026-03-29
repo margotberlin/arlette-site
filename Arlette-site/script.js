@@ -189,8 +189,11 @@ function createPortfolioProjectCard(project) {
     <a href="project.html?slug=${project.slug}" class="project-reel group/reel relative block overflow-hidden rounded-3xl bg-stone-200 shadow-lg" data-project-reel>
       <div class="relative w-full overflow-hidden" style="aspect-ratio: 4 / 5;">${slides}</div>
     </a>
-    <h2 class="font-display mt-5 text-3xl text-stone-900 md:text-4xl">${project.title}</h2>
+    <h2 class="mt-5">
+      <a href="project.html?slug=${project.slug}" class="font-display text-3xl text-stone-900 transition hover:text-stone-700 md:text-4xl">${project.title}</a>
+    </h2>
     <p class="mt-3 max-w-xl text-base leading-8 text-stone-600">${project.description}</p>
+    <a href="project.html?slug=${project.slug}" class="mt-6 inline-flex w-fit items-center gap-3 border-b border-stone-900 pb-1 text-sm font-medium uppercase text-stone-900 transition hover:border-stone-600 hover:text-stone-600" style="letter-spacing:0.22em;">View Project <span aria-hidden="true">→</span></a>
   `;
 
   article.dataset.imageCount = String(images.length);
