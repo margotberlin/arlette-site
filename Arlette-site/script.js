@@ -146,7 +146,6 @@ function getProjectImages(project) {
 function createFeaturedProjectCard(project, index) {
   const article = document.createElement("article");
   const images = getProjectImages(project);
-  const featuredLabel = state.site?.home_page?.featured_item_label || "Selected Work";
   article.className = "grid gap-8 border-t border-stone-300 pt-10 md:grid-cols-2 md:items-start md:gap-12";
 
   if (index % 2 === 1) {
@@ -158,8 +157,7 @@ function createFeaturedProjectCard(project, index) {
       <img src="${images[0]}" alt="${project.title}" class="h-80 w-full object-cover transition duration-700 group-hover:scale-[1.02] md:h-96" />
     </a>
     <div class="flex h-full flex-col justify-center md:px-4" style="${index % 2 === 1 ? "direction:ltr;" : ""}">
-      <p class="text-xs uppercase text-stone-500" style="letter-spacing:0.3em;">${featuredLabel}</p>
-      <h3 class="font-display mt-3 text-4xl leading-none text-stone-900 md:text-5xl">${project.title}</h3>
+      <h3 class="font-display text-4xl leading-none text-stone-900 md:text-5xl">${project.title}</h3>
       <p class="mt-5 max-w-md text-base leading-8 text-stone-700 md:text-lg">${project.description}</p>
       <a href="project.html?slug=${project.slug}" class="mt-8 inline-flex w-fit items-center gap-3 border-b border-stone-900 pb-1 text-sm font-medium uppercase text-stone-900 transition hover:border-stone-600 hover:text-stone-600" style="letter-spacing:0.22em;">View Project <span aria-hidden="true">→</span></a>
     </div>

@@ -31,7 +31,6 @@ collections:
               - { label: "Section Label", name: "section_label", widget: "string" }
               - { label: "Section Title", name: "section_title", widget: "string" }
               - { label: "Section Intro", name: "section_intro", widget: "text" }
-              - { label: "Featured Item Label", name: "featured_item_label", widget: "string" }
           - label: "Projects Page"
             name: "projects_page"
             widget: "object"
