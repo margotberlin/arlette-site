@@ -1,15 +1,17 @@
 {
   "title": "Studio Arlette",
   "tagline": "Interior design shaped with warmth, texture, and calm restraint.",
+  
   "about_page": {
     "section_label": "About",
     "section_title": "Studio Profile",
     "body": "We design thoughtful interiors."
   },
   "home_page": {
-    "section_label": "Portfolio",
+    "section_label": "",
     "section_title": "Selected Work",
-    "section_intro": "A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance."
+    "section_intro": "A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance.",
+    "featured_item_label": ""
   },
   "projects_page": {
     "section_label": "Portfolio",
