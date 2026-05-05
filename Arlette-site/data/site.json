@@ -2,9 +2,9 @@
   "about_page": {
     "section_label": "About",
     "section_title": "Studio Profile",
-    "body": "Studio Arlette is a London-based interior design studio working across residential and hospitality projects, defined by a thoughtful, detail-driven approach and a deep appreciation for craftsmanship. Founded by a designer with an international background, the studio brings together experience in fashion, the arts, and product design to create spaces that feel both considered and characterful.\n\nWith a particular expertise in vintage sourcing and bespoke furnishings, Studio Arlette layers old and new to achieve interiors that are rich in narrative and quietly distinctive. Each project is guided by an intuitive understanding of materials, traditional techniques, and the beauty of imperfection, resulting in spaces that feel personal, calm, and lived-in.\n\nAs a boutique practice, the studio offers a highly tailored service, working closely with clients to balance aesthetics with the practicalities of everyday life. This includes a refined sensitivity to small-space living, as well as an ability to design environments that support both family life and the operational demands of hospitality settings, particularly restaurants.\n\nStudio Arlette’s design philosophy is rooted in a belief that interiors should not only be visually compelling but also deeply functional- spaces that evolve with their inhabitants while maintaining a strong sense of identity and finding beauty in everything.\n"
+    "body": "Studio Arlette is a London-based interior design studio working across residential and hospitality projects, defined by a thoughtful, detail-driven approach and a deep appreciation for craftsmanship. Founded by a designer with an international background, the studio brings together experience in fashion, the arts, and product design to create spaces that feel both considered and characterful.\n\nWith a particular expertise in vintage sourcing and bespoke furnishings, Studio Arlette layers old and new to achieve interiors that are rich in narrative and quietly distinctive. Each project is guided by an intuitive understanding of materials, traditional techniques, and the beauty of imperfection, resulting in spaces that feel personal, calm, and lived-in.\n\nAs a boutique practice, the studio offers a highly tailored service, working closely with clients to balance aesthetics with the practicalities of everyday life. This includes a refined sensitivity to small-space living, as well as an ability to design environments that support both family life and the operational demands of hospitality settings, particularly restaurants.\n\nStudio Arlette’s design philosophy is rooted in a belief that interiors should not only be visually compelling but also deeply functional- spaces that evolve with their inhabitants while maintaining a strong sense of identity and finding beauty in everything.\n",
+    "sections": []
   },
-  "facebook": "https://facebook.com/yourstudio",
   "tagline": "Interior design shaped with warmth, texture, and calm restraint.",
   "contact_page": {
     "section_label": "Contact",
@@ -12,25 +12,47 @@
     "section_intro": "For collaborations, consultations, or press enquiries, reach out directly by email or through the studio's social channels.",
     "email_label": "Email",
     "instagram_label": "Instagram",
-    "linkedin_label": "LinkedIn",
-    "facebook_label": "Facebook",
-    "pinterest_label": "Pinterest"
+    "pinterest_label": "Pinterest",
+    "sections": []
   },
   "home_page": {
     "section_label": "Portfolio",
     "section_title": "Selected Work",
     "section_intro": "A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance.",
-    "featured_item_label": "Selected Work"
+    "featured_item_label": "Selected Work",
+    "sections": []
   },
   "instagram": "https://instagram.com/yourstudio",
   "projects_page": {
     "section_label": "Portfolio",
     "section_title": "Projects",
-    "section_intro": "ADD COPY HERE."
+    "section_intro": "ADD COPY HERE.",
+    "sections": []
+  },
+  "services_page": {
+    "section_label": "Services",
+    "section_title": "Services",
+    "section_intro": "Interior design support for residential and hospitality spaces, shaped around each project's scale, pace, and practical needs.",
+    "sections": [
+      {
+        "title": "Residential Interiors",
+        "body": "Full-service interior design for homes, from early spatial thinking and material palettes through sourcing, procurement, and installation.",
+        "image": "/images/studio-session-061.jpg"
+      },
+      {
+        "title": "Hospitality Design",
+        "body": "Design consultation for restaurants and hospitality spaces, balancing atmosphere, operations, layout, lighting, and guest experience.",
+        "image": "/images/lupa.webp"
+      },
+      {
+        "title": "Sourcing and Styling",
+        "body": "Vintage sourcing, bespoke furnishings, art, textiles, and styling support for layered spaces with a strong sense of character.",
+        "image": "/images/studio-session-137.jpg"
+      }
+    ]
   },
   "hero_image": "/images/studio-session-482.jpg",
   "title": "Studio Arlette",
   "pinterest": "https://pinterest.com/yourstudio",
-  "email": "studioarlette.co@gmail.com",
-  "linkedin": "https://linkedin.com/in/yourstudio"
+  "email": "studioarlette.co@gmail.com"
 }

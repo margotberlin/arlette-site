@@ -24,6 +24,15 @@ collections:
               - { label: "Section Label", name: "section_label", widget: "string" }
               - { label: "Section Title", name: "section_title", widget: "string" }
               - { label: "Body", name: "body", widget: "text" }
+              - label: "Additional Sections"
+                name: "sections"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
           - label: "Homepage"
             name: "home_page"
             widget: "object"
@@ -31,6 +40,15 @@ collections:
               - { label: "Section Label", name: "section_label", widget: "string" }
               - { label: "Section Title", name: "section_title", widget: "string" }
               - { label: "Section Intro", name: "section_intro", widget: "text" }
+              - label: "Additional Sections"
+                name: "sections"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
           - label: "Projects Page"
             name: "projects_page"
             widget: "object"
@@ -38,6 +56,31 @@ collections:
               - { label: "Section Label", name: "section_label", widget: "string" }
               - { label: "Section Title", name: "section_title", widget: "string" }
               - { label: "Section Intro", name: "section_intro", widget: "text" }
+              - label: "Additional Sections"
+                name: "sections"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
+          - label: "Services Page"
+            name: "services_page"
+            widget: "object"
+            fields:
+              - { label: "Section Label", name: "section_label", widget: "string" }
+              - { label: "Section Title", name: "section_title", widget: "string" }
+              - { label: "Section Intro", name: "section_intro", widget: "text" }
+              - label: "Sections"
+                name: "sections"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
           - label: "Contact Page"
             name: "contact_page"
             widget: "object"
@@ -47,13 +90,18 @@ collections:
               - { label: "Section Intro", name: "section_intro", widget: "text" }
               - { label: "Email Label", name: "email_label", widget: "string" }
               - { label: "Instagram Label", name: "instagram_label", widget: "string" }
-              - { label: "LinkedIn Label", name: "linkedin_label", widget: "string" }
-              - { label: "Facebook Label", name: "facebook_label", widget: "string" }
               - { label: "Pinterest Label", name: "pinterest_label", widget: "string" }
+              - label: "Additional Sections"
+                name: "sections"
+                widget: "list"
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+                  - { label: "Image", name: "image", widget: "image", required: false }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Instagram URL", name: "instagram", widget: "string" }
-          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
-          - { label: "Facebook URL", name: "facebook", widget: "string" }
           - { label: "Pinterest URL", name: "pinterest", widget: "string" }
 
       - name: "projects_list"
@@ -67,7 +115,6 @@ collections:
             summary: "{{fields.title}}"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Slug", name: "slug", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Featured on Homepage", name: "featured", widget: "boolean", required: false, default: false }
               - { label: "Featured Order", name: "featured_order", widget: "number", required: false, value_type: "int", min: 1 }

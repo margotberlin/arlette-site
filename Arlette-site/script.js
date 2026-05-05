@@ -1,8 +1,6 @@
 const PROJECT_REEL_INTERVAL = 3200;
 const SOCIAL_PLATFORMS = [
   { key: "instagram", label: "Instagram" },
-  { key: "linkedin", label: "LinkedIn" },
-  { key: "facebook", label: "Facebook" },
   { key: "pinterest", label: "Pinterest" },
 ];
 
@@ -102,6 +100,55 @@ function updateSocialLinks(site) {
   });
 }
 
+function getPageSections(page) {
+  return Array.isArray(page?.sections) ? page.sections : [];
+}
+
+function createPageSection(section, index) {
+  const article = document.createElement("article");
+  const hasImage = Boolean(section.image);
+  article.className = hasImage
+    ? "grid gap-8 border-t border-stone-300 pt-10 md:grid-cols-2 md:items-start md:gap-12"
+    : "border-t border-stone-300 pt-10";
+
+  if (hasImage && index % 2 === 1) {
+    article.style.direction = "rtl";
+  }
+
+  const copy = `
+    <div class="${hasImage ? "flex h-full flex-col justify-center md:px-4" : "max-w-3xl"}" style="${hasImage && index % 2 === 1 ? "direction:ltr;" : ""}">
+      <h2 class="font-display text-4xl leading-none text-stone-900 md:text-5xl">${section.title || ""}</h2>
+      <p class="mt-5 whitespace-pre-line text-base leading-8 text-stone-700 md:text-lg">${section.body || ""}</p>
+    </div>
+  `;
+
+  if (!hasImage) {
+    article.innerHTML = copy;
+    return article;
+  }
+
+  article.innerHTML = `
+    <figure class="overflow-hidden rounded-3xl bg-stone-200 shadow-lg">
+      <img src="${section.image}" alt="${section.title || ""}" class="h-80 w-full object-cover md:h-96" />
+    </figure>
+    ${copy}
+  `;
+
+  return article;
+}
+
+function renderPageSections(site) {
+  document.querySelectorAll("[data-page-sections]").forEach((container) => {
+    const pageKey = container.dataset.pageSections;
+    const sections = getPageSections(site[pageKey]);
+
+    container.innerHTML = "";
+    sections.forEach((section, index) => {
+      container.appendChild(createPageSection(section, index));
+    });
+  });
+}
+
 async function loadSite() {
   const site = await getSiteData();
 
@@ -117,18 +164,20 @@ async function loadSite() {
   setText("projects-section-label", site.projects_page?.section_label);
   setText("projects-section-title", site.projects_page?.section_title);
   setText("projects-section-intro", site.projects_page?.section_intro);
+  setText("services-section-label", site.services_page?.section_label);
+  setText("services-section-title", site.services_page?.section_title);
+  setText("services-section-intro", site.services_page?.section_intro);
   setText("contact-section-label", site.contact_page?.section_label);
   setText("contact-section-title", site.contact_page?.section_title);
   setText("contact-section-intro", site.contact_page?.section_intro);
   setDataText('[data-contact-label="email"]', site.contact_page?.email_label);
   setDataText('[data-contact-label="instagram"]', site.contact_page?.instagram_label);
-  setDataText('[data-contact-label="linkedin"]', site.contact_page?.linkedin_label);
-  setDataText('[data-contact-label="facebook"]', site.contact_page?.facebook_label);
   setDataText('[data-contact-label="pinterest"]', site.contact_page?.pinterest_label);
 
   updateHero(site);
   updateEmail(site);
   updateSocialLinks(site);
+  renderPageSections(site);
 }
 
 function sortFeaturedProjects(projects) {
@@ -143,9 +192,27 @@ function getProjectImages(project) {
     .filter(Boolean);
 }
 
+function slugifyProjectTitle(title) {
+  return String(title || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function getProjectSlug(project) {
+  return String(project.slug || "").trim() || slugifyProjectTitle(project.title);
+}
+
+function getProjectUrl(project) {
+  const slug = getProjectSlug(project);
+  return slug ? `project.html?slug=${encodeURIComponent(slug)}` : "project.html";
+}
+
 function createFeaturedProjectCard(project, index) {
   const article = document.createElement("article");
   const images = getProjectImages(project);
+  const projectUrl = getProjectUrl(project);
   article.className = "grid gap-8 border-t border-stone-300 pt-10 md:grid-cols-2 md:items-start md:gap-12";
 
   if (index % 2 === 1) {
@@ -153,13 +220,13 @@ function createFeaturedProjectCard(project, index) {
   }
 
   article.innerHTML = `
-    <a href="project.html?slug=${project.slug}" class="group block overflow-hidden rounded-3xl bg-stone-200 shadow-lg">
+    <a href="${projectUrl}" class="group block overflow-hidden rounded-3xl bg-stone-200 shadow-lg">
       <img src="${images[0]}" alt="${project.title}" class="h-80 w-full object-cover transition duration-700 group-hover:scale-[1.02] md:h-96" />
     </a>
     <div class="flex h-full flex-col justify-center md:px-4" style="${index % 2 === 1 ? "direction:ltr;" : ""}">
       <h3 class="font-display text-4xl leading-none text-stone-900 md:text-5xl">${project.title}</h3>
       <p class="mt-5 max-w-md text-base leading-8 text-stone-700 md:text-lg">${project.description}</p>
-      <a href="project.html?slug=${project.slug}" class="mt-8 inline-flex w-fit items-center gap-3 border-b border-stone-900 pb-1 text-sm font-medium uppercase text-stone-900 transition hover:border-stone-600 hover:text-stone-600" style="letter-spacing:0.22em;">View Project <span aria-hidden="true">→</span></a>
+      <a href="${projectUrl}" class="mt-8 inline-flex w-fit items-center gap-3 border-b border-stone-900 pb-1 text-sm font-medium uppercase text-stone-900 transition hover:border-stone-600 hover:text-stone-600" style="letter-spacing:0.22em;">View Project <span aria-hidden="true">→</span></a>
     </div>
   `;
 
@@ -179,6 +246,7 @@ function createProjectImageSlide(src, title, isActive) {
 function createPortfolioProjectCard(project) {
   const article = document.createElement("article");
   const images = getProjectImages(project);
+  const projectUrl = getProjectUrl(project);
   article.className = "group";
 
   const slides = images
@@ -186,14 +254,14 @@ function createPortfolioProjectCard(project) {
     .join("");
 
   article.innerHTML = `
-    <a href="project.html?slug=${project.slug}" class="project-reel group/reel relative block overflow-hidden rounded-3xl bg-stone-200 shadow-lg" data-project-reel>
+    <a href="${projectUrl}" class="project-reel group/reel relative block overflow-hidden rounded-3xl bg-stone-200 shadow-lg" data-project-reel>
       <div class="relative w-full overflow-hidden" style="aspect-ratio: 4 / 5;">${slides}</div>
     </a>
     <h2 class="mt-5">
-      <a href="project.html?slug=${project.slug}" class="font-display text-3xl text-stone-900 transition hover:text-stone-700 md:text-4xl">${project.title}</a>
+      <a href="${projectUrl}" class="font-display text-3xl text-stone-900 transition hover:text-stone-700 md:text-4xl">${project.title}</a>
     </h2>
     <p class="mt-3 max-w-xl text-base leading-8 text-stone-600">${project.description}</p>
-    <a href="project.html?slug=${project.slug}" class="mt-6 inline-flex w-fit items-center gap-3 border-b border-stone-900 pb-1 text-sm font-medium uppercase text-stone-900 transition hover:border-stone-600 hover:text-stone-600" style="letter-spacing:0.22em;">View Project <span aria-hidden="true">→</span></a>
+    <a href="${projectUrl}" class="mt-6 inline-flex w-fit items-center gap-3 border-b border-stone-900 pb-1 text-sm font-medium uppercase text-stone-900 transition hover:border-stone-600 hover:text-stone-600" style="letter-spacing:0.22em;">View Project <span aria-hidden="true">→</span></a>
   `;
 
   article.dataset.imageCount = String(images.length);
@@ -259,7 +327,7 @@ async function loadProjectPage() {
   }
 
   const projects = await getProjectsData();
-  const project = projects.find((item) => item.slug === slug);
+  const project = projects.find((item) => getProjectSlug(item) === slug);
 
   if (!project) {
     return;
