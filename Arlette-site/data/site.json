@@ -1,23 +1,11 @@
 {
-  "title": "Studio Arlette",
-  "tagline": "Interior design shaped with warmth, texture, and calm restraint.",
-  
   "about_page": {
     "section_label": "About",
     "section_title": "Studio Profile",
-    "body": "We design thoughtful interiors."
+    "body": "Studio Arlette is a London-based interior design studio working across residential and hospitality projects, defined by a thoughtful, detail-driven approach and a deep appreciation for craftsmanship. Founded by a designer with an international background, the studio brings together experience in fashion, the arts, and product design to create spaces that feel both considered and characterful.\n\nWith a particular expertise in vintage sourcing and bespoke furnishings, Studio Arlette layers old and new to achieve interiors that are rich in narrative and quietly distinctive. Each project is guided by an intuitive understanding of materials, traditional techniques, and the beauty of imperfection, resulting in spaces that feel personal, calm, and lived-in.\n\nAs a boutique practice, the studio offers a highly tailored service, working closely with clients to balance aesthetics with the practicalities of everyday life. This includes a refined sensitivity to small-space living, as well as an ability to design environments that support both family life and the operational demands of hospitality settings, particularly restaurants.\n\nStudio Arlette’s design philosophy is rooted in a belief that interiors should not only be visually compelling but also deeply functional- spaces that evolve with their inhabitants while maintaining a strong sense of identity and finding beauty in everything.\n"
   },
-  "home_page": {
-    "section_label": "",
-    "section_title": "Selected Work",
-    "section_intro": "A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance.",
-    "featured_item_label": "Selected Work"
-  },
-  "projects_page": {
-    "section_label": "Portfolio",
-    "section_title": "Projects",
-    "section_intro": "ADD COPY HERE."
-  },
+  "facebook": "https://facebook.com/yourstudio",
+  "tagline": "Interior design shaped with warmth, texture, and calm restraint.",
   "contact_page": {
     "section_label": "Contact",
     "section_title": "Let's Talk",
@@ -28,9 +16,20 @@
     "facebook_label": "Facebook",
     "pinterest_label": "Pinterest"
   },
-  "email": "studioarlette.co@gmail.com",
+  "home_page": {
+    "section_label": "Portfolio",
+    "section_title": "Selected Work",
+    "section_intro": "A curated edit of spaces with layered materials, warmth, and a quietly lived-in elegance.",
+    "featured_item_label": "Selected Work"
+  },
   "instagram": "https://instagram.com/yourstudio",
-  "linkedin": "https://linkedin.com/in/yourstudio",
-  "facebook": "https://facebook.com/yourstudio",
-  "pinterest": "https://pinterest.com/yourstudio"
+  "projects_page": {
+    "section_label": "Portfolio",
+    "section_title": "Projects",
+    "section_intro": "ADD COPY HERE."
+  },
+  "title": "Studio Arlette",
+  "pinterest": "https://pinterest.com/yourstudio",
+  "email": "studioarlette.co@gmail.com",
+  "linkedin": "https://linkedin.com/in/yourstudio"
 }
