@@ -1,14 +1,34 @@
 {
   "projects": [
     {
-      "title": "North London Townhouse",
+      "title": "London Townhouse",
       "slug": "north-london",
-      "description": "A full renovation project.",
+      "description": "In 2023, Studio Arlette fully designed, modelled, and project managed the renovation of a Victorian terrace in North London, including a rear extension and complete reconfiguration of the layout to enhance light, flow, and functionality. The studio led all sourcing and procurement, restoring original joinery and cornicing while introducing a more considered, tailored ground floor.\n\nThe design blends natural materials, craftsmanship, and warm neutral tones with layered colour and pattern inspired by global travels. A curated mix of art and textiles adds depth and character, creating a home that balances timeless design with the practicalities of family living.",
       "featured": true,
       "featured_order": 1,
       "images": [
-        "https://picsum.photos/800/600",
-        "https://picsum.photos/801/600"
+        "/images/017a8782.jpg",
+        "/images/studio-session-418.jpg"
+      ]
+    },
+    {
+      "featured": true,
+      "title": "Lupa Restaurant, Highbury",
+      "description": "Studio Arlette consulted on the design of Lupa, a Roman restaurant in Highbury, collaborating with restaurateur Ed Templeton and actor Theo James. Working to a tight timeline, the brief focused on refreshing the space while retaining its original character to create an authentic yet contemporary Italian dining experience.\n\nInspired by Italian Osterias and sourcing trips across Italy, the studio advised on layout, lighting, and soft furnishings, ensuring the space functioned efficiently. With a strong understanding of hospitality operations, Studio Arlette supported both the flow and aesthetic direction, contributing to a cohesive design and successful opening.",
+      "images": [
+        "/images/lupa.webp",
+        "/images/lupa-3.webp",
+        "/images/lupa-23.webp"
+      ],
+      "featured_order": 1
+    },
+    {
+      "featured": true,
+      "title": "Ornella Restaurant, London Fields",
+      "description": "Designed new Milanese Restaurant, called Ornella, in collaboration with team behind Lupa.  Opening May 2026.  ",
+      "featured_order": 6,
+      "images": [
+        "/images/screenshot-2026-01-28-at-10.23.17-am.png"
       ]
     }
   ]
